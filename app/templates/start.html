@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>{{title}}</title>
+    {% else %}
+        <title>Vzhuch!!!</title>
+    {% endif %}
+<head>
+<body>
+    {% block content %}
+    <form action="{{ url_for('start')}}">
+        <h3>Сервис для классификации дохода людей</h3>
+        <p>При помощи данного сервиса мы будем делать ВЖУХ!</p>
+        <p>
+            <input type="submit" value="Ввести данные для ВЖУХ">
+        </p>
+    </form>
+    {% endblock %}
+</body>
+</html>

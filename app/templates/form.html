@@ -1,0 +1,24 @@
+{% extends "start.html" %}
+{% block content %}
+    <form method='post' name='data' action="{{ url_for('predict') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <h4>Данные человека:</h4>
+        <p>Раса {{form.race}}*набор данных 1994 года</p>
+        <p>Пол {{form.sex}}</p>
+        <p>Возраст {{form.age}}</p>
+        <p>Страна проживания {{form.native_country}}</p>
+        <p>Категория работника {{form.workclass}}</p>
+        <p>Образование {{form.education}}</p>
+        <p>Количество лет обучения {{form.education_num}}</p>
+        <p>Сфера деятельности {{form.occupation}}</p>
+        <p>Количество рабочих часов в неделю {{form.hours_per_week}}</p>
+        <p>Семейное положение {{form.marital_status}}</p>
+        <p>Отношения {{form.relationship}}</p>
+        <p>Прирост капитала {{form.capital_gain}}</p>
+        <p>Потеря капитала {{form.capital_loss}}</p>
+        <p>
+            <input type="submit" value="Сделать ВЖУХ!">
+        </p>
+    </form>
+    <a href="/">Вернуться на главную</a>
+{% endblock %}
